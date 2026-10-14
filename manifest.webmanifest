@@ -1,0 +1,10 @@
+{
+  "name": "Daily Words",
+  "short_name": "Daily Words",
+  "description": "Learn 5 English words a day. Keep your streak.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6faf7",
+  "theme_color": "#16a34a",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

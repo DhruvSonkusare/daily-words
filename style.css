@@ -1,0 +1,78 @@
+/* Mobile first. System font only (no downloads). Big buttons. High contrast. */
+:root {
+  --bg: #f6faf7;
+  --card: #ffffff;
+  --text: #14211a;
+  --muted: #55645b;
+  --green: #15803d;
+  --green-soft: #dcfce7;
+  --red: #b91c1c;
+  --red-soft: #fee2e2;
+  --line: #d4ded7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1a14; --card: #18271f; --text: #eef6f0; --muted: #a4b5aa;
+    --green: #4ade80; --green-soft: #14532d; --red: #fca5a5; --red-soft: #7f1d1d; --line: #2d4136;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 18px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+main { max-width: 480px; margin: 0 auto; padding: 16px; min-height: 100vh; }
+
+h1 { font-size: 24px; margin: 0; }
+h2 { font-size: 20px; margin: 24px 0 8px; }
+p { margin: 8px 0; }
+.muted { color: var(--muted); font-size: 16px; }
+.center { text-align: center; }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; margin: 12px 0; }
+
+/* Buttons: at least 56px tall so they are easy to tap */
+button {
+  font: inherit; color: inherit; width: 100%; min-height: 56px; padding: 12px 16px; margin: 6px 0;
+  border: 2px solid var(--line); border-radius: 14px; background: var(--card); cursor: pointer;
+}
+button:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+button.main { background: var(--green); border-color: var(--green); color: #fff; font-weight: 700; }
+@media (prefers-color-scheme: dark) { button.main { color: #06210f; } }
+button.link { border: 0; background: none; min-height: 44px; color: var(--muted); text-decoration: underline; font-size: 16px; }
+button.listen { width: auto; min-height: 44px; padding: 6px 16px; font-size: 16px; }
+
+.top { display: flex; justify-content: space-between; align-items: center; }
+.stats { display: flex; gap: 8px; }
+.stat { flex: 1; text-align: center; padding: 12px 4px; }
+.stat b { display: block; font-size: 28px; line-height: 1.2; }
+
+.bar { height: 12px; background: var(--line); border-radius: 6px; overflow: hidden; margin: 8px 0; }
+.bar > div { height: 100%; background: var(--green); transition: width .3s; }
+
+.week { display: flex; justify-content: space-between; }
+.day { text-align: center; font-size: 14px; color: var(--muted); }
+.dot { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--line); margin: 4px auto 0;
+  display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.dot.done { background: var(--green); border-color: var(--green); color: #fff; }
+.dot.today { border-color: var(--green); }
+
+/* Quiz */
+.big-emoji { font-size: 88px; line-height: 1.2; text-align: center; }
+.prompt { font-size: 22px; font-weight: 700; text-align: center; margin: 8px 0 16px; }
+.choice { font-size: 22px; font-weight: 600; }
+.choice.right { background: var(--green-soft); border-color: var(--green); }
+.choice.wrong { background: var(--red-soft); border-color: var(--red); }
+.feedback { font-size: 20px; font-weight: 700; margin: 12px 0 4px; }
+.feedback.bad { color: var(--red); }
+.feedback.good { color: var(--green); }
+
+/* Badges */
+.badges { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.badge { text-align: center; padding: 12px 8px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.badge .e { font-size: 36px; }
+.badge.locked { opacity: .45; filter: grayscale(1); }
+.badge small { display: block; color: var(--muted); font-size: 14px; line-height: 1.3; }
+
+@media (prefers-reduced-motion: reduce) { .bar > div { transition: none; } }
