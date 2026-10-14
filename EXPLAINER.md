@@ -31,4 +31,6 @@ Your users are on cheap phones, mobile data, and read English as a second langua
 - Dark mode, reduced-motion support, visible focus, 56px buttons.
 
 ## Where I used AI
-I used Claude Code (Anthropic) to help write the code, the word list and this document. I reviewed and directed it, for example asking for simpler, easier-to-read code. _Edit this section so it matches what you actually did._
+I used Claude Code (Anthropic) to write the first version of the code, the 60-word list, the tests and this document.
+
+What was mine: choosing the idea and the audience (low-end phones, English as a second language), deciding what to leave out, and directing the work. For example, I asked for the game logic to be rewritten in simpler, easier-to-read code. I also set up the repository and deployed the app myself.
